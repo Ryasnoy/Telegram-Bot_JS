@@ -3,6 +3,6 @@ const TOKEN = '460496377:AAEfoxLCOmoMGVXgsrvXnWp7C_qcRtQb2Nw'
 
 const bot = new TelegramBot(TOKEN, {polling: true})
 
-bot.on('message', msg => {
-  bot.sendMessage(msg.chat.id, `Hello from Heroku, bot says: "Hi, ${msg.from.first_name}"`)
+bot.on('new_chat_participant', msg => {
+  bot.sendMessage(msg.chat.id, `Привет, ${msg.from.first_name}! Расскажи немного о себе, что бы мы с тобой познакомились поближе`)
 })
